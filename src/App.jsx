@@ -8,7 +8,7 @@ import AIResultPage from './pages/AIResultPage.jsx';
 import CustomResultPage from './pages/CustomResultPage.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import RegisterPage from './pages/RegisterPage.jsx';
-import SavedBuildsPage from './pages/SavedBuildsPage.jsx';
+import DashboardPage from './pages/DashboardPage.jsx';
 import './App.css';
 
 export default function App() {
@@ -84,9 +84,9 @@ export default function App() {
                     </div>
                   </div>
                   <div className="dropdown-divider" />
-                  <button className="dropdown-item" onClick={() => { setDropdownOpen(false); navigate('/saved-builds'); }}>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z" /><polyline points="17,21 17,13 7,13 7,21" /><polyline points="7,3 7,8 15,8" /></svg>
-                    Saved Builds
+                  <button className="dropdown-item" onClick={() => { setDropdownOpen(false); navigate('/dashboard'); }}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    Dashboard
                   </button>
                   <button className="dropdown-item dropdown-logout" onClick={handleLogout}>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4" /><polyline points="16,17 21,12 16,7" /><line x1="21" y1="12" x2="9" y2="12" /></svg>
@@ -112,7 +112,7 @@ export default function App() {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/ai-result" element={<ProtectedRoute><AIResultPage /></ProtectedRoute>} />
           <Route path="/custom-result" element={<ProtectedRoute><CustomResultPage /></ProtectedRoute>} />
-          <Route path="/saved-builds" element={<ProtectedRoute><SavedBuildsPage /></ProtectedRoute>} />
+          <Route path="/dashboard" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
         </Routes>
       </main>
 
